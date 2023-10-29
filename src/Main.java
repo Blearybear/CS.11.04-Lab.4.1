@@ -68,8 +68,8 @@ public class Main {
         for (String word : words) {
             StringBuilder decryptedWord = new StringBuilder();
             if (!word.isEmpty()) {
-                int firstCharCode = Integer.parseInt(word.replaceAll("[^0-9]", "")); //Replaces all of not(^) numbers(0-9) with nothing("")
-                decryptedWord.append((char) firstCharCode); //narrowing cast ASCII back to char
+                int firstCharASCII = Integer.parseInt(word.replaceAll("[^0-9]", "")); //Replaces all of not(^) numbers(0-9) with nothing("")
+                decryptedWord.append((char) firstCharASCII); //narrowing cast ASCII back to char
                 String remainingPart = word.replaceAll("[0-9]", ""); //Replaces all of numbers(0-9) with nothing(""), sets it to a string to start appending
                 if (remainingPart.length() > 1) {
                     decryptedWord.append(remainingPart.charAt(remainingPart.length() - 1)); //appends last char as second char
