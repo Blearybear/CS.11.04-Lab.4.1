@@ -56,7 +56,10 @@ public class Main {
             }
             returnThing.append(encryptedWord).append(" "); //space after every word
         }
-        return returnThing.toString().trim(); //.trim to remove whitespace at the back
+        if (returnThing.charAt(returnThing.length() - 1) == ' '){ //remove whitespace at the back, changed from .trim() as apparently trim creates new String instance
+            returnThing.deleteCharAt(returnThing.length() - 1);
+        }
+        return returnThing.toString();
     }
 
 
@@ -81,6 +84,9 @@ public class Main {
             }
             returnThing.append(decryptedWord).append(" ");
         }
-        return returnThing.toString().trim();
+        if (returnThing.charAt(returnThing.length() - 1) == ' '){ //remove whitespace at the back, changed from .trim() as apparently trim creates new String instance
+            returnThing.deleteCharAt(returnThing.length() - 1);
+        }
+        return returnThing.toString();
     }
 }
